@@ -4,7 +4,7 @@ clc;
 clear all;
 close all;
 format shortG
-saving_enabled = true;
+saving_enabled = false;
 Gompertz_enabled = false;
 
 %% save csv from url
@@ -123,8 +123,8 @@ if (strcmp(nation, 'Italy') == 1 && Gompertz_enabled == true)
     ylabel('Deaths');
     legend('Deaths','fit 31 mar', 'fit 1 apr', 'fit 4 apr', 'fit 7 apr', 'Location', 'northwest');
     if (saving_enabled)
-        saveas(fig_gompertz,strcat('Charts/EPS/Gompertz relation_',nation),'epsc');
-        saveas(fig_gompertz,strcat('Charts/PNG/Gompertz relation_',nation,'.png'),'png');
+        saveas(fig_gompertz,strcat("Charts/EPS/Gompertz relation ",nation),'epsc');
+        saveas(fig_gompertz,strcat("Charts/PNG/Gompertz relation ",nation,'.png'),'png');
     end
     %% matlab fit
     %fitobject = fit([1:length(nation_deaths)]',nation_deaths','exp1');
