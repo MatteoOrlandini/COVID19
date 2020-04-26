@@ -65,24 +65,79 @@ fig_recovered = figure('Name',strcat(nation,' recovered'),'NumberTitle','off');
 plot (nation_recovered);
 xlabel('Days since first confirmed case');
 ylabel('Recoveded');
+
+%daily confirmed
 daily_confirmed_growth = [0 diff(nation_confirmed)];
-createFit(daily_confirmed_growth,nation,saving_enabled);
+[fitresult, xData, yData] = createFit(daily_confirmed_growth);
+% Plot fit with data.
+fig_daily_confirmed = figure('Name',strcat(nation,' daily confirmed growth'),'NumberTitle','off');
+plot( fitresult, xData, yData );
+legend('Daily confirmed growth', 'Fit', 'Location', 'NorthWest', 'Interpreter', 'none' );
+xlabel('Days since first confirmed case');
+ylabel('Daily confirmed growth');
+grid on
+%plot daily % confirmed
 daily_perc_confirmed_growth = daily_confirmed_growth./nation_confirmed*100;
 fig_daily_perc_confirmed_growth = figure('Name',strcat(nation,' daily % confirmed growth'),'NumberTitle','off');
 plot (daily_perc_confirmed_growth);
 xlabel('Days since first confirmed case');
 ylabel('Daily % confirmed growth');
 
+%daily deaths
+daily_deaths_growth = [0 diff(nation_deaths)];
+[fitresult, xData, yData] = createFit(daily_deaths_growth);
+% Plot fit with data.
+fig_daily_deaths = figure('Name',strcat(nation,' daily deaths growth'),'NumberTitle','off');
+plot( fitresult, xData, yData );
+legend('Daily death growth', 'Fit', 'Location', 'NorthWest', 'Interpreter', 'none' );
+xlabel('Days since first confirmed case');
+ylabel('Daily death growth');
+grid on
+%plot daily % deaths
+daily_perc_deaths_growth = daily_deaths_growth./nation_deaths*100;
+fig_daily_perc_deaths_growth = figure('Name',strcat(nation," daily % deaths growth"),'NumberTitle','off');
+plot (daily_perc_deaths_growth);
+xlabel('Days since first confirmed case');
+ylabel('Daily % deaths growth');
+
+%daily recovered
+daily_recovered_growth = [0 diff(nation_recovered)];
+[fitresult, xData, yData] = createFit(daily_recovered_growth);
+% Plot fit with data.
+fig_daily_recovered = figure('Name',strcat(nation,' daily recovered growth'),'NumberTitle','off');
+plot( fitresult, xData, yData );
+legend('Daily recovered growth', 'Fit', 'Location', 'NorthWest', 'Interpreter', 'none' );
+xlabel('Days since first confirmed case');
+ylabel('Daily recovered growth');
+grid on
+%plot daily % recovered
+daily_perc_recovered_growth = daily_recovered_growth./nation_recovered*100;
+fig_daily_perc_recovered_growth = figure('Name',strcat(nation," daily % recovered growth"),'NumberTitle','off');
+plot (daily_perc_recovered_growth);
+xlabel('Days since first confirmed case');
+ylabel('Daily % recovered growth');
+
+
 %% save all the figures
 if (saving_enabled)
-    saveas(fig_confirmed,strcat('Charts/EPS/',nation,' confirmed'),'epsc');
-    saveas(fig_confirmed,strcat('Charts/PNG/',nation,' confirmed.png'),'png');
-    saveas(fig_deaths,strcat('Charts/EPS/',nation,' deaths'),'epsc');
-    saveas(fig_deaths,strcat('Charts/PNG/',nation,' deaths.png'),'png');
-    saveas(fig_recovered,strcat('Charts/EPS/',nation,' recovered'),'epsc');
-    saveas(fig_recovered,strcat('Charts/PNG/',nation,' recovered.png'),'png');
-    saveas(fig_daily_perc_confirmed_growth,strcat('Charts/EPS/',nation,' daily % confirmed growth'),'epsc');
-    saveas(fig_daily_perc_confirmed_growth,strcat('Charts/PNG/',nation,' daily % confirmed growth.png'),'png');
+    saveas(fig_confirmed,strcat("Charts/EPS/',nation,' confirmed"),'epsc');
+    saveas(fig_confirmed,strcat("Charts/PNG/',nation,' confirmed.png"),'png');
+    saveas(fig_deaths,strcat("Charts/EPS/',nation,' deaths"),'epsc');
+    saveas(fig_deaths,strcat("Charts/PNG/',nation,' deaths.png"),'png');
+    saveas(fig_recovered,strcat("Charts/EPS/',nation,' recovered"),'epsc');
+    saveas(fig_recovered,strcat("Charts/PNG/',nation,' recovered.png"),'png');
+    saveas(fig_daily_confirmed,strcat("Charts/EPS/',nation,' daily confirmed growth"),'epsc');
+    saveas(fig_daily_confirmed,strcat("Charts/PNG/',nation,' daily confirmed growth.png"),'png');
+    saveas(fig_daily_perc_confirmed_growth,strcat("Charts/EPS/',nation,' daily % confirmed growth"),'epsc');
+    saveas(fig_daily_perc_confirmed_growth,strcat("Charts/PNG/',nation,' daily % confirmed growth.png"),'png');
+    saveas(fig_daily_deaths,strcat("Charts/EPS/',nation,' daily deaths growth"),'epsc');
+    saveas(fig_daily_deaths,strcat("Charts/PNG/',nation,' daily deaths growth.png"),'png');
+    saveas(fig_daily_perc_deaths_growth,strcat("Charts/EPS/',nation,' daily % deaths growth"),'epsc');
+    saveas(fig_daily_perc_deaths_growth,strcat("Charts/PNG/',nation,' daily % deaths growth.png"),'png');
+    saveas(fig_daily_recovered,strcat("Charts/EPS/',nation,' daily recovered growth"),'epsc');
+    saveas(fig_daily_recovered,strcat("Charts/PNG/',nation,' daily recovered growth.png"),'png');
+    saveas(fig_daily_perc_recovered_growth,strcat("Charts/EPS/',nation,' daily % recovered growth"),'epsc');
+    saveas(fig_daily_perc_recovered_growth,strcat("Charts/PNG/',nation,' daily % recovered growth.png"),'png');
 end
 
 %% start plot Gompertz relation
@@ -149,6 +204,7 @@ end
 
 
 %% nn
+%{
 %https://it.mathworks.com/help/thingspeak/create-and-train-a-feedforward-neural-network.html
 net = feedforwardnet(20);
 %net.trainParam.showWindow = 0;   %disable popup of training windows for neural network
@@ -161,3 +217,4 @@ plot (nation_confirmed);
 hold on;
 xlim([date(1), date(end)]);
 legend('Trained data', 'Confirmed cases','Location','northwest');
+%}

@@ -1,6 +1,6 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
   <configuration build-checksum="1553649767" file="D:\GitHub\COVID19\MATLAB_App.prj" location="D:\GitHub\COVID19" name="MATLAB_App" preferred-package-location="D:\GitHub\COVID19\MATLAB_App\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
-    <param.appname>MATLAB_App</param.appname>
+    <param.appname>COVID19</param.appname>
     <param.icon />
     <param.icons />
     <param.version>1.0</param.version>
@@ -11,7 +11,7 @@
     <param.description />
     <param.screenshot />
     <param.guid />
-    <param.installpath.string>\MATLAB_App\</param.installpath.string>
+    <param.installpath.string>\COVID19\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
     <param.logo />
     <param.install.notes />
@@ -91,7 +91,7 @@
     </fileset.depfun>
     <build-deliverables>
       <file location="${PROJECT_ROOT}\MATLAB_App\for_testing" name="readme.txt" optional="true">D:\GitHub\COVID19\MATLAB_App\for_testing\readme.txt</file>
-      <file location="${PROJECT_ROOT}\MATLAB_App\for_testing" name="MATLAB_App.exe" optional="false">D:\GitHub\COVID19\MATLAB_App\for_testing\MATLAB_App.exe</file>
+      <file location="${PROJECT_ROOT}\MATLAB_App\for_testing" name="COVID19.exe" optional="false">D:\GitHub\COVID19\MATLAB_App\for_testing\COVID19.exe</file>
       <file location="${PROJECT_ROOT}\MATLAB_App\for_testing" name="splash.png" optional="false">D:\GitHub\COVID19\MATLAB_App\for_testing\splash.png</file>
     </build-deliverables>
     <workflow />

@@ -1,4 +1,4 @@
-function [fitresult, gof] = createFit(daily_confirmed_growth,nation,saving_enabled)
+function [fitresult, xData, yData] = createFit(data)
 %CREATEFIT(DAILY_CONFIRMED_GROWTH)
 %  Create a fit.
 %
@@ -14,29 +14,14 @@ function [fitresult, gof] = createFit(daily_confirmed_growth,nation,saving_enabl
 
 
 %% Fit: 'untitled fit 1'.
-[xData, yData] = prepareCurveData( [], daily_confirmed_growth );
+[xData, yData] = prepareCurveData( [], data );
 
 % Set up fittype and options.
-ft = fittype( 'poly6' );
+ft = fittype( 'poly9' );
 opts = fitoptions( 'Method', 'LinearLeastSquares' );
 opts.Normalize = 'on';
 opts.Robust = 'Bisquare';
 
 % Fit model to data.
 [fitresult, gof] = fit( xData, yData, ft, opts );
-
-% Cannot generate code for validating 'untitled fit 1' because the validation data is incomplete or incompatible with the fitting data.
-
-% Plot fit with data.
-fig_daily_confirmed = figure('Name',strcat(nation,' daily confirmed growth'),'NumberTitle','off');
-h = plot( fitresult, xData, yData );
-legend( h, 'Daily confirmed growth', 'Fit', 'Location', 'NorthWest', 'Interpreter', 'none' );
-% Label axes
-xlabel('Days since first confirmed case');
-ylabel('Daily confirmed growth');
-grid on
-if (saving_enabled)
-    saveas(fig_daily_confirmed,strcat('Charts/EPS/',nation,' daily confirmed growth'),'epsc');
-    saveas(fig_daily_confirmed,strcat('Charts/PNG/',nation,' daily confirmed growth.png'),'png');
-end
 
