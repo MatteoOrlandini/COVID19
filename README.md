@@ -1,17 +1,27 @@
-You can find the dataset [here][1].
-The charts are [here][2] and are available in two formats ([.png][3] and [.eps][4]). 
+This MATLAB application allows you to plot some data of the COVID19 disease. You can find the dataset [here](https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases). In this project there is a [MATLAB code](https://github.com/MatteoOrlandini/COVID19/blob/master/COVID19.m) and a [MATLAB graphic application](https://github.com/MatteoOrlandini/COVID19/tree/master/MATLAB_App) developed using MATLAB App Designer. 
+
+There are nine kind of charts:
+* total confirmed
+* total recovered
+* total deaths
+* daily % confirmed cases growth
+* daily % recovered cases growth
+* daily % deaths cases growth
+* daily confirmed cases growth and its linear regression model
+* daily recovered cases growth and its linear regression model
+* daily deaths cases growth and its linear regression model
+
+# MATLAB Application
+There is a variable called "nation" with which you can select the desired country and a variable "saving_enabled" if you want to save the charts plotted. The charts are saved [here](https://github.com/MatteoOrlandini/COVID19/tree/master/Charts) and are available in two formats ([.png](https://github.com/MatteoOrlandini/COVID19/tree/master/Charts/PNG) and [.eps](https://github.com/MatteoOrlandini/COVID19/tree/master/Charts/EPS)). 
 This is an exampe of linear regression for daily confirmed cases in Italy.
 
-![5] 
+![](https://raw.githubusercontent.com/MatteoOrlandini/COVID19/master/Charts/PNG/Italy%20daily%20confirmed%20growth.png)
 
-You can download the installer for the standalone application (without Matlab) [here][6]. The following image shows an example of usage of the application. You can choose six types of charts for all the nations of this world.
+# MATLAB Graphic Application
+You can download the installer for the standalone application (without Matlab) [here](https://github.com/MatteoOrlandini/COVID19/blob/master/MATLAB_App/for_redistribution/MyAppInstaller_web.exe). The following image shows an example of usage of the application.
 
-![7]
+![](https://github.com/MatteoOrlandini/COVID19/blob/master/APP_Screen.jpg)
 
-   [1]: https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases
-   [2]: https://github.com/MatteoOrlandini/COVID19/tree/master/Charts
-   [3]: https://github.com/MatteoOrlandini/COVID19/tree/master/Charts/PNG
-   [4]: https://github.com/MatteoOrlandini/COVID19/tree/master/Charts/EPS
-   [5]: https://raw.githubusercontent.com/MatteoOrlandini/COVID19/master/Charts/PNG/Italy%20daily%20confirmed%20growth.png
-   [6]: https://github.com/MatteoOrlandini/COVID19/blob/master/MATLAB_App/for_redistribution/MyAppInstaller_web.exe
-   [7]: https://github.com/MatteoOrlandini/COVID19/blob/master/APP_Screen.jpg
+You can choose nine types of charts for all the nations around the world.
+
+![](https://github.com/MatteoOrlandini/COVID19/blob/master/Chart_type.jpg)
