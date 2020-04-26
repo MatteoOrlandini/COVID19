@@ -112,20 +112,20 @@ plot( fitresult, xData, yData );
 xticks([1: 15: length(yData)]);
 xticklabels(date(end-length(yData)+1 : 15: end));
 legend('Daily death growth', 'Fit', 'Location', 'NorthWest', 'Interpreter', 'none' );
-xlabel('Days since first death case');
+xlabel('Days since first confirmed case');
 ylabel('Daily death growth');
 grid on
 %plot daily % deaths
-daily_perc_deaths_growth = daily_deaths_growth./nation_deaths_no_zero*100;
+daily_perc_deaths_growth = daily_deaths_growth./nation_deaths*100;
 fig_daily_perc_deaths_growth = figure('Name',strcat(nation," daily % deaths growth"),'NumberTitle','off');
 plot (daily_perc_deaths_growth);
 xticks([1: 15: length(daily_perc_deaths_growth)]);
 xticklabels(date(end-length(daily_perc_deaths_growth)+1 : 15: end));
-xlabel('Days since first death case');
+xlabel('Days since first confirmed case');
 ylabel('Daily % deaths growth');
 
 %daily recovered
-daily_recovered_growth = [0 diff(nation_recovered_no_zero)];
+daily_recovered_growth = [0 diff(nation_recovered)];
 [fitresult, xData, yData] = createFit(daily_recovered_growth);
 % Plot fit with data.
 fig_daily_recovered = figure('Name',strcat(nation,' daily recovered growth'),'NumberTitle','off');
@@ -133,16 +133,16 @@ plot( fitresult, xData, yData );
 xticks([1: 15: length(yData)]);
 xticklabels(date(end-length(yData)+1 : 15: end));
 legend('Daily recovered growth', 'Fit', 'Location', 'NorthWest', 'Interpreter', 'none' );
-xlabel('Days since first recovered case');
+xlabel('Days since first confirmed case');
 ylabel('Daily recovered growth');
 grid on
 %plot daily % recovered
-daily_perc_recovered_growth = daily_recovered_growth./nation_recovered_no_zero*100;
+daily_perc_recovered_growth = daily_recovered_growth./nation_recovered*100;
 fig_daily_perc_recovered_growth = figure('Name',strcat(nation," daily % recovered growth"),'NumberTitle','off');
 plot (daily_perc_recovered_growth);
 xticks([1: 15: length(daily_perc_recovered_growth)]);
 xticklabels(date(end-length(daily_perc_recovered_growth)+1 : 15: end));
-xlabel('Days since first recovered case');
+xlabel('Days since first confirmed case');
 ylabel('Daily % recovered growth');
 
 
