@@ -1,11 +1,11 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="1553649767" file="D:\GitHub\COVID19\MATLAB_App.prj" location="D:\GitHub\COVID19" name="MATLAB_App" preferred-package-location="D:\GitHub\COVID19\MATLAB_App\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="59858262" file="D:\GitHub\COVID19\MATLAB_App.prj" location="D:\GitHub\COVID19" name="MATLAB_App" preferred-package-location="D:\GitHub\COVID19\MATLAB_App\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>COVID19</param.appname>
     <param.icon />
     <param.icons />
     <param.version>1.0</param.version>
-    <param.authnamewatermark />
-    <param.email />
+    <param.authnamewatermark>Matteo Orlandini</param.authnamewatermark>
+    <param.email>matteoorlandini.mail@gmail.com</param.email>
     <param.company />
     <param.summary />
     <param.description />
@@ -46,8 +46,6 @@
       <param.icon />
       <param.icons />
       <param.version />
-      <param.authnamewatermark />
-      <param.email />
       <param.company />
       <param.summary />
       <param.description />
@@ -80,15 +78,11 @@
       <param.example />
     </unset>
     <fileset.main>
-      <file>${PROJECT_ROOT}\MATLAB_App.mlapp</file>
+      <file>${PROJECT_ROOT}\COVID19_App.mlapp</file>
     </fileset.main>
     <fileset.resources />
     <fileset.package />
-    <fileset.depfun>
-      <file>${PROJECT_ROOT}\time_series_covid19_confirmed_global.csv</file>
-      <file>${PROJECT_ROOT}\time_series_covid19_deaths_global.csv</file>
-      <file>${PROJECT_ROOT}\time_series_covid19_recovered_global.csv</file>
-    </fileset.depfun>
+    <fileset.depfun />
     <build-deliverables>
       <file location="${PROJECT_ROOT}\MATLAB_App\for_testing" name="readme.txt" optional="true">D:\GitHub\COVID19\MATLAB_App\for_testing\readme.txt</file>
       <file location="${PROJECT_ROOT}\MATLAB_App\for_testing" name="COVID19.exe" optional="false">D:\GitHub\COVID19\MATLAB_App\for_testing\COVID19.exe</file>

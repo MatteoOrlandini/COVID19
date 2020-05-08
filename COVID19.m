@@ -8,14 +8,14 @@ saving_enabled = true;
 Gompertz_enabled = false;
 
 %% save csv from url
-confirmed_global_file = websave('time_series_covid19_confirmed_global.csv','https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2FCSSEGISandData%2FCOVID-19%2Fmaster%2Fcsse_covid_19_data%2Fcsse_covid_19_time_series%2Ftime_series_covid19_confirmed_global.csv&filename=time_series_covid19_confirmed_global.csv');
-deaths_global_file = websave('time_series_covid19_deaths_global.csv','https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2FCSSEGISandData%2FCOVID-19%2Fmaster%2Fcsse_covid_19_data%2Fcsse_covid_19_time_series%2Ftime_series_covid19_deaths_global.csv&filename=time_series_covid19_deaths_global.csv');
-recovered_global_file = websave('time_series_covid19_recovered_global.csv','https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2FCSSEGISandData%2FCOVID-19%2Fmaster%2Fcsse_covid_19_data%2Fcsse_covid_19_time_series%2Ftime_series_covid19_recovered_global.csv&filename=time_series_covid19_recovered_global.csv');
+confirmed_global_file = websave('Dataset/time_series_covid19_confirmed_global.csv','https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2FCSSEGISandData%2FCOVID-19%2Fmaster%2Fcsse_covid_19_data%2Fcsse_covid_19_time_series%2Ftime_series_covid19_confirmed_global.csv&filename=time_series_covid19_confirmed_global.csv');
+deaths_global_file = websave('Dataset/time_series_covid19_deaths_global.csv','https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2FCSSEGISandData%2FCOVID-19%2Fmaster%2Fcsse_covid_19_data%2Fcsse_covid_19_time_series%2Ftime_series_covid19_deaths_global.csv&filename=time_series_covid19_deaths_global.csv');
+recovered_global_file = websave('Dataset/time_series_covid19_recovered_global.csv','https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2FCSSEGISandData%2FCOVID-19%2Fmaster%2Fcsse_covid_19_data%2Fcsse_covid_19_time_series%2Ftime_series_covid19_recovered_global.csv&filename=time_series_covid19_recovered_global.csv');
 
 %% load csv
-confirmed_global = readtable('time_series_covid19_confirmed_global.csv');
-deaths_global = readtable('time_series_covid19_deaths_global.csv');
-recovered_global = readtable('time_series_covid19_recovered_global.csv');
+confirmed_global = readtable('Dataset/time_series_covid19_confirmed_global.csv');
+deaths_global = readtable('Dataset/time_series_covid19_deaths_global.csv');
+recovered_global = readtable('Dataset/time_series_covid19_recovered_global.csv');
 nation = 'Italy';
 date = table2cell(confirmed_global(1, 5:end));
 nations_list = confirmed_global.Var2(2:end);   
